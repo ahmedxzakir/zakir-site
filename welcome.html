@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Welcome container with border and shadow */
+        .welcome-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid #00c6ff; /* Added border around the whole container */
+        }
+
+        .welcome-container h1 {
+            color: #fff;
+            font-size: 60px; /* Increased font size */
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            margin-bottom: 30px;
+        }
+
+        /* Tab Styles */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .tab {
+            background-color: #0072ff;
+            color: white;
+            padding: 20px 40px; /* Increased padding */
+            border: none;
+            cursor: pointer;
+            margin: 0 15px; /* Increased margin */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 22px; /* Increased font size */
+            transition: background-color 0.3s, transform 0.3s;
+            border: 3px solid transparent; /* Add border to tab */
+        }
+
+        .tab:hover {
+            background-color: #00c6ff;
+            transform: scale(1.1); /* Slight zoom effect */
+            border-color: #fff; /* Border color changes on hover */
+        }
+
+        .tab-content {
+            display: none;
+            text-align: center;
+            color: white;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .link {
+            color: #00c6ff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>WELCOME</h1> <!-- Changed the text here -->
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab" onclick="showTab('tikTok')">ZK TIKTOK</button>
+            <button class="tab" onclick="showTab('freeFire')">ZK FREE FIRE</button>
+            <button class="tab" onclick="redirectToPhotoPage()">ZK PHOTO</button> <!-- Modified this button -->
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="tikTok" class="tab-content">
+            <h2>ZK TIKTOK</h2>
+            <p>Welcome to the ZK TIKTOK page. Here you can explore TikTok videos.</p>
+            <a href="https://www.tiktok.com/@_____________________zz2?_t=ZS-8t3skDDf6lm&_r=1" target="_blank" class="link">Click here to visit my TikTok profile</a>
+        </div>
+        <div id="freeFire" class="tab-content">
+            <h2>ZK FREE FIRE</h2>
+            <p>Welcome to the ZK FREE FIRE page. Check out the latest updates about Free Fire.</p>
+        </div>
+        <div id="photo" class="tab-content">
+            <h2>ZK PHOTO</h2>
+            <p>Welcome to the ZK PHOTO page. View amazing pictures and photos.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to show a specific tab content
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+        }
+
+        // Redirect to photopage.html when the ZK PHOTO tab is clicked
+        function redirectToPhotoPage() {
+            window.location.href = 'photopage.html'; // Redirect to photopage.html
+        }
+
+        // Show the default tab (ZK TIKTOK) on page load
+        showTab('tikTok');
+    </script>
+</body>
+</html>

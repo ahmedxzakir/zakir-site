@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCS Style Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #1d2b64, #f8cdda);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: backgroundGlow 6s infinite alternate;
+        }
+
+        /* Background Animation */
+        @keyframes backgroundGlow {
+            0% {
+                background: linear-gradient(45deg, #1d2b64, #f8cdda);
+            }
+            50% {
+                background: linear-gradient(45deg, #4776e6, #8e54e9);
+            }
+            100% {
+                background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);
+            }
+        }
+
+        /* Logo Section */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 20px; /* Moved up */
+            left: 30px;
+        }
+
+        .logo {
+            font-size: 80px;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            font-weight: bold;
+            background-color: #0072ff;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.7), 0 0 30px rgba(0, 198, 255, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            background-color: #00c6ff;
+            box-shadow: 0 0 20px rgba(0, 198, 255, 1), 0 0 40px rgba(0, 198, 255, 0.6);
+        }
+
+        /* Logo Text Styling */
+        .logo-text {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            margin-left: 15px;
+            margin-top: 5px; /* Moved down */
+        }
+
+        /* Container Styling */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Title Styling */
+        .container h1 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+        }
+
+        .form-group {
+            margin-bottom: 10px; /* Reduced space between input fields */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Add border */
+            border-radius: 5px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease-in-out;
+            margin-top: 10px; /* Slight space at the top of input fields */
+        }
+
+        /* Focus Styling */
+        .form-group input:focus {
+            border-color: #00c6ff; /* Highlight the border when focused */
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.8); /* Add glow effect on focus */
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 0 0 10px #00c6ff, 0 0 20px #0072ff;
+            box-shadow: 0 0 20px #00c6ff, 0 0 30px #0072ff;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <div class="logo">
+            Z
+        </div>
+        <div class="logo-text">
+            zakir.com
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username or Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+            
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                // Check if both fields are filled
+                if (username && password) {
+                    // Redirect to the welcome page after login
+                    window.location.href = "welcome.html"; // Redirection to the new page
+                } else {
+                    // If username or password is missing
+                    alert('Please enter both username and password!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
